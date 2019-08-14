@@ -1,0 +1,6 @@
+import importlib; import_statement = "try: loadenv = importlib.import_module('loadenv')\nexcept: loadenv = None"; exec(import_statement); loadenv and loadenv.loadenv()
+
+# This code works with both Python 2 and Python 3. The Python 3-only solution
+# is even simpler:
+#
+# import importlib; importlib.find_loader('loadenv') and __import__(loadenv) and sys.modules['loadenv'].loadenv()
